@@ -1,0 +1,35 @@
+<h2 class="screen-align">CreateTicket</h2>
+<div id="template-i1nf" class="row">
+    <div id="template-ia3l" class="cell">
+        <label id="template-i491" class="label">Name</label>
+        <input id="template-ilnsg" class="input form-control" />
+    </div>
+    <div id="template-ix4i" class="cell">
+        <label id="template-ibs6" class="label">Description</label>
+        <input id="template-i8nj1" class="input form-control"
+        />
+    </div>
+    <div id="template-i7dd" class="cell">
+        <label id="template-in0g" class="label">Types</label>
+        <div id="template-iey8g" class=""></div>
+        <div id="template-i8q7i" class="">
+            <ng-select id="template-i11bk" name="dynamicdropdown_template-i11bk" [searchable]="true"
+            [virtualScroll]="true" [items]="typesitemArray" bindLabel="path" bindValue="path"
+            [(ngModel)]="ticket.types" [ngModelOptions]="{standalone: true}" (click)="typesGpGetAllValues()"
+            class="form-control"></ng-select>
+        </div>
+    </div>
+</div>
+<div id="template-i8df5" class="row">
+    <div id="template-ijerh" class="cell">
+        <label id="template-ikrds" class="label">Start_destination</label>
+        <input id="template-iyjs5" class="input form-control"
+        />
+    </div>
+    <div id="template-i2k53" class="cell">
+        <label id="template-i04q3" class="label">End_destination</label>
+        <input id="template-ii6tx" [(ngModel)]="ticket.end_destination"
+        [ngModelOptions]="{standalone: true}" class="input form-control" />
+    </div>
+</div>
+<button id="template-inopq" (click)="GpCreate()" class="button btn btn-primary">Create</button>

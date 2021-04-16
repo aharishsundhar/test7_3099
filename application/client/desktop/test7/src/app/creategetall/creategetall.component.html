@@ -1,0 +1,39 @@
+<h2 class="screen-align">CreateGetAll</h2>
+<div id="template-iggh" class="row">
+    <div id="template-iw2u" class="cell">
+        <label id="template-if4h" class="label">Travel_path</label>
+        <input id="template-ijhv" [(ngModel)]="types.path"
+        [ngModelOptions]="{standalone: true}" class="input form-control" />
+    </div>
+    <div id="template-irhk" class="cell">
+        <label id="template-i194" class="label">Route</label>
+        <input id="template-iqpe" [(ngModel)]="types.route" [ngModelOptions]="{standalone: true}"
+        class="input form-control" />
+    </div>
+</div>
+<button id="template-i5oe" (click)="GpCreate()" class="button btn btn-primary">Create</button>
+<div name="grid_template-i0xj" class="">
+    <table id="table" class="table table-bordered  table-striped" data-show-header="true"
+    data-pagination="true" data-id-field="name">
+        <thead class="table table-hover">
+            <tr>
+                <th *ngFor="let column of columnDefs">{{column.headerName}}</th>
+            </tr>
+        </thead>
+        <tbody class="table-design" *ngIf="rowData.length==0">
+            <td style="text-align: center;" colspan="5">No Data Found</td>
+        </tbody>
+        <tbody class="table-design" *ngIf="rowData.length>0">
+            <tr *ngFor="let values of rowData | slice: (page-1) * paginationPageSize :(page-1) * paginationPageSize + paginationPageSize">
+                <td>{{ values.path }}</td>
+                <td>{{ values.route }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="text-right">
+        <ngb-pagination class="d-flex justify-content-start" [(page)]="page" [maxSize]="5"
+        [rotate]="true" [pageSize]="paginationPageSize" [collectionSize]="rowData.length"
+        [boundaryLinks]="true"></ngb-pagination>
+    </div>
+</div>
+<div id="myGrid" class=""></div>
